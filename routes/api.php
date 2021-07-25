@@ -16,5 +16,6 @@ Route::group(['namespace'=>'\App\Http\Controllers','middleware'=>'auth:api'], fu
     Route::delete('users/{id}', 'Userscontroller@delete');
 
     Route::apiResource('categories', 'Backend\CategoryController');
+    Route::apiResource('sub-categories', 'Backend\SubCategoryController');
 });
 
