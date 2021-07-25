@@ -14,5 +14,7 @@ Route::group(['namespace'=>'\App\Http\Controllers','middleware'=>'auth:api'], fu
     Route::get('users/{id}', 'Userscontroller@singleuser');
     Route::put('users/{id}', 'UsersController@update');
     Route::delete('users/{id}', 'Userscontroller@delete');
+
+    Route::apiResource('categories', 'Backend\CategoryController');
 });
 
