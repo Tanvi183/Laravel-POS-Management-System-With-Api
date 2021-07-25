@@ -8,3 +8,11 @@ Route::group(['namespace'=>'\App\Http\Controllers'],function(){
     Route::post('login','UsersController@login');
 });
 
+Route::group(['namespace'=>'\App\Http\Controllers','middleware'=>'auth:api'], function(){
+    Route::get('users', 'Userscontroller@getusers');
+    Route::post('users', 'Userscontroller@storeuser');
+    Route::get('users/{id}', 'Userscontroller@singleuser');
+    Route::put('users/{id}', 'UsersController@update');
+    Route::delete('users/{id}', 'Userscontroller@delete');
+});
+
