@@ -20,6 +20,7 @@ class SubCategoryController extends Controller
     public function index()
     {
         $subcategory = SubCategory::all();
+        // $subcategory = SubCategory::with('Category')->get();
         return response()->json($subcategory, 200);
     }
 
@@ -61,6 +62,7 @@ class SubCategoryController extends Controller
     public function show($id)
     {
         $subcategory = SubCategory::findOrFail($id);
+        // $subcategory = SubCategory::with('Category')->where('id', $id)->get();
         return response()->json($subcategory, 200);
     }
 

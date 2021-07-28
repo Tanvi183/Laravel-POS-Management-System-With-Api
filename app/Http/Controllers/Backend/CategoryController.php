@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,6 +21,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all();
+        // $category = Category::with('SubCategory')->get();
         return response()->json($category, 200);
     }
 
@@ -59,6 +61,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $category = Category::findOrFail($id);
+        // $category = Category::with('SubCategory')->where('id', $id)->get();
         return response()->json($category, 200);
     }
 
