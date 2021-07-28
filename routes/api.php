@@ -18,5 +18,6 @@ Route::group(['namespace'=>'\App\Http\Controllers','middleware'=>'auth:api'], fu
     Route::apiResource('categories', 'Backend\CategoryController');
     Route::apiResource('sub-categories', 'Backend\SubCategoryController');
     Route::apiResource('brands', 'Backend\BrandController');
+    Route::apiResource('units', 'Backend\UnitController');
 });
 
