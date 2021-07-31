@@ -21,5 +21,6 @@ Route::group(['namespace'=>'\App\Http\Controllers','middleware'=>'auth:api'], fu
     Route::apiResource('units', 'Backend\UnitController');
     Route::apiResource('products', 'Backend\ProductController');
     Route::apiResource('suppliers', 'Backend\SupplierController');
+    Route::apiResource('purchases', 'Backend\PurchaseController');
 });
 
